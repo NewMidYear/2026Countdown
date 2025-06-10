@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Święto Półrocza 2025</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Menu */
+        .menu-bar {
+            background-color: #111c2a;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .menu-bar a {
+            float: left;
+            display: block;
+            color: #f0f0f0;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .menu-bar a:hover {
+            background-color: #f39c12;
+            color: #111c2a;
+        }
+
+        .menu-bar a.icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .menu-bar a {
+                display: none;
+                width: 100%;
+                text-align: left;
+            }
+            .menu-bar a.icon {
+                float: right;
+                display: block;
+                cursor: pointer;
+            }
+            .menu-bar.responsive {
+                position: relative;
+            }
+            .menu-bar.responsive a {
+                display: block;
+                width: 100%;
+                border-top: 1px solid #f39c12;
+            }
+        }
+
+        /* Header */
+        header {
+            background-color: transparent;
+            padding: 40px 20px 20px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            color: #f39c12;
+            text-shadow: 0 0 8px #f39c12, 0 0 20px #f39c12;
+            letter-spacing: 2px;
+            animation: glow 2s ease-in-out infinite alternate;
+            display: inline-block;
+            position: relative;
+        }
+
+        header h1::after {
+            content: "✨";
+            position: absolute;
+            top: -10px;
+            right: -30px;
+            font-size: 2rem;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        header h2 {
+            margin-top: 10px;
+            font-weight: 400;
+            font-size: 1.6rem;
+            color: #f0d87d;
+            text-shadow: 0 0 5px #f0d87d;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #f39c12, 0 0 10px #f39c12;
+            }
+            to {
+                text-shadow: 0 0 20px #f39c12, 0 0 30px #f39c12;
+            }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+            50% { opacity: 0.5; transform: scale(1.2) rotate(20deg); }
+        }
+
+        /* Main */
+        main {
+            padding: 20px 30px;
+            flex-grow: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(243, 156, 18, 0.6);
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #f39c12;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: #f0f0f0;
+        }
+
+        /* Plan wydarzenia */
+        .plan {
+            background: rgba(243, 156, 18, 0.15);
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-style: italic;
+            color: #fff;
+            box-shadow: inset 0 0 10px rgba(243, 156, 18, 0.5);
+        }
+
+        /* Przycisk */
+        .btn-celebrate {
+            display: inline-block;
+            background-color: #f39c12;
+            color: #111c2a;
+            font-weight: 700;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: 0 0 20px #f39c12;
+            transition: background-color 0.3s, color 0.3s;
+            margin-top: 15px;
+            user-select: none;
+        }
+        .btn-celebrate:hover {
+            background-color: #e67e22;
+            color: #fff;
+            box-shadow: 0 0 25px #e67e22;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #111c2a;
+            color: #f39c12;
+            font-weight: 600;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.6);
+        }
+
+        /* Fajerwerki w tle - CSS */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(243, 156, 18, 0.3) 10px, transparent 11px),
+                radial-gradient(circle at 80% 40%, rgba(243, 156, 18, 0.25) 8px, transparent 9px),
+                radial-gradient(circle at 50% 80%, rgba(243, 156, 18, 0.2) 12px, transparent 13px);
+            background-repeat: no-repeat;
+            animation: flicker 3s infinite alternate;
+            z-index: 0;
+        }
+
+        @keyframes flicker {
+            0% {opacity: 0.4;}
+            100% {opacity: 0.8;}
+        }
+    </style>
+</head>
+<body>
+
+<!-- Menu Hamburgerowe -->
+<div class="menu-bar" id="myMenu">
+    <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
+    <a href="index.html">Strona Główna</a>
+    <a href="odliczanie.html">Odliczanie</a>
+    <a href="wiadomosci.html">Najnowsze Wiadomości</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="mapa.html">Mapa</a>
+</div>
+
+<script>
+    function toggleMenu() {
+        var x = document.getElementById("myMenu");
+        if (x.className === "menu-bar") {
+            x.className += " responsive";
+        } else {
+            x.className = "menu-bar";
+        }
+    }
+</script>
+
+<!-- Strona Główna -->
+<header>
+    <h1>Święto Półrocza 2025 ✨</h1>
+    <h2>Obchodzimy połowę roku w wielkim stylu!</h2>
+</header>
+
+<main>
+    <section>
+        <h2>Co to jest Święto Półrocza?</h2>
+        <p>Święto Półrocza to wydarzenie, które ma na celu świętowanie połowy roku. Zaczyna się w nocy z 30 czerwca na 1 lipca, kiedy kończy się pierwsze półrocze roku, a zaczyna drugie. To doskonała okazja, aby zresetować swoje cele, podsumować osiągnięcia i przygotować się na kolejną połowę roku. W zależności od strefy czasowej, moment ten jest obchodzony o północy lokalnego czasu, co oznacza, że w różnych miejscach świata święto rozpoczyna się w różnych godzinach. Na przykład, gdy w Moskwie jest północ, w Polsce jest 23:00, a w Londynie 22:00.</p>
+    </section>
+
+    <section>
+        <h2>Kiedy występuje Święto Półrocza?</h2>
+        <p>Drugie półrocze roku 2025 rozpoczyna się z 30 czerwca na 1 lipca. W każdym kraju moment ten będzie obchodzony o północy czasu lokalnego, w zależności od strefy czasowej. W miejscach położonych na wschód od Polski, takich jak Moskwa, święto rozpocznie się wcześniej, a na zachodzie, na przykład w Londynie, później. To globalne wydarzenie, które jednoczy różne strefy czasowe tego samego dnia, ale o różnych godzinach.</p>
+    </section>
+
+    <section>
+        <h2>Plan wydarzenia</h2>
+        <div class="plan">
+            <ul>
+                <li>23:50 - Rozpoczęcie transmisji na żywo</li>
+                <li>00:00 - Wielkie odliczanie do Święta Półrocza</li>
+                <li>00:01 - Pokaz fajerwerków</li>
+                <li>00:15 - Wirtualne toast i życzenia</li>
+                <li>01:00 - Zakończenie wydarzenia</li>
+            </ul>
+        </div>
+        <a href="odliczanie.html" class="btn-celebrate">Dołącz do świętowania!</a>
+    </section>
+</main>
+
+<footer>
+    &copy; 2025 Święto Półrocza — Wszelkie prawa zastrzeżone
+</footer>
+
+</body>
+</html>
