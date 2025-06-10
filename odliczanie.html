@@ -129,12 +129,12 @@
   </div>
 
 <script>
-  // Lista stref i ich offset¨®w w godzinach
+  // Lista stref i ich offsetÂ¨Â®w w godzinach
   const timezones = [
     { label: "UTC +14", offset: 14 },
     { label: "UTC +13", offset: 13 },
     { label: "UTC +12:45", offset: 12.75 }
-    // mo0—4esz doda0Œ4 kolejne strefy je0”2li chcesz
+    // moÂ0â€”4esz dodaÂ0Å’4 kolejne strefy jeÂ0â€2li chcesz
   ];
 
   let currentZoneIndex = 0;
@@ -142,7 +142,7 @@
   // Funkcja do ustawienia targetu i offsetu dla aktualnej strefy
   function setTargetForZone(index) {
     const tz = timezones[index];
-    // 1 lipca 2025, 00:00 UTC (miesi0Œ2c = 6, bo zero-index w JS)
+    // 1 lipca 2025, 00:00 UTC (miesiÂ0Å’2c = 6, bo zero-index w JS)
     const targetUTC = Date.UTC(2025, 6, 1, 0, 0, 0);
     const offsetMs = tz.offset * 60 * 60 * 1000;
     return targetUTC - offsetMs;
@@ -154,7 +154,7 @@
   const labelElem = document.getElementById('label');
   const messageElem = document.getElementById('message');
 
-  // Tworzenie element¨®w cyfr i separator¨®w
+  // Tworzenie elementÂ¨Â®w cyfr i separatorÂ¨Â®w
   function createDigitSpans() {
     countdownElem.innerHTML = '';
     const space = document.createElement('span');
@@ -199,7 +199,7 @@
     return n.toString().padStart(length, '0');
   }
 
-  // D0—2wi0Ž1ki
+  // DÂ0â€”2wiÂ0Å½1ki
   const tickSound = new Audio('https://actions.google.com/sounds/v1/alarms/clock_tick.ogg');
   const fireworksSound = new Audio('https://actions.google.com/sounds/v1/fireworks/fireworks_crack.ogg');
 
@@ -222,9 +222,9 @@ remainder %= 3600;
 const minutes = Math.floor(remainder / 60);
 const seconds = remainder % 60;
 
-    // Ukrywanie dni/godzin/minut je0”2li zero (prosty spos¨®b)
-    // Mo0—4esz rozszerzy0Œ4 na bardziej zaawansowane ukrywanie, je0”2li chcesz
-    // Podobnie mo0—4na zrobi0Œ4 z godzinami i minutami je0”2li chcesz, ale tutaj zostawiam je zawsze widoczne
+    // Ukrywanie dni/godzin/minut jeÂ0â€2li zero (prosty sposÂ¨Â®b)
+    // MoÂ0â€”4esz rozszerzyÂ0Å’4 na bardziej zaawansowane ukrywanie, jeÂ0â€2li chcesz
+    // Podobnie moÂ0â€”4na zrobiÂ0Å’4 z godzinami i minutami jeÂ0â€2li chcesz, ale tutaj zostawiam je zawsze widoczne
 
     const daysStr = pad(days);
     const hoursStr = pad(hours);
@@ -240,7 +240,7 @@ const seconds = remainder % 60;
       inner.style.top = `-${digit}em`;
     }
 
-    // Obs0’0uga d0—2wi0Ž1ku tykania na ostatnie 10 sekund
+    // ObsÂ0â€™0uga dÂ0â€”2wiÂ0Å½1ku tykania na ostatnie 10 sekund
     if(totalSeconds <= 10 && totalSeconds > 0) {
       if(!ticking) {
         tickSound.loop = true;
@@ -262,19 +262,19 @@ const seconds = remainder % 60;
       tickSound.pause();
       tickSound.currentTime = 0;
 
-      // Poka0—4 wiadomo0”20Œ4
+      // PokaÂ0â€”4 wiadomoÂ0â€2Â0Å’4
       messageElem.style.display = 'block';
 
-      // Zagraj d0—2wi0Ž1k fajerwerk¨®w
+      // Zagraj dÂ0â€”2wiÂ0Å½1k fajerwerkÂ¨Â®w
       fireworksSound.play();
 
-      // Po 10 sekundach przejd0—2 do nast0Ž1pnej strefy i zresetuj odliczanie
+      // Po 10 sekundach przejdÂ0â€”2 do nastÂ0Å½1pnej strefy i zresetuj odliczanie
       setTimeout(() => {
         messageElem.style.display = 'none';
 
-        // resetuj czas startu, 0—4eby liczy0Œ4 do kolejnego targetu i tak dalej
+        // resetuj czas startu, Â0â€”4eby liczyÂ0Å’4 do kolejnego targetu i tak dalej
         currentZoneIndex++;
-        if(currentZoneIndex >= timezones.length) currentZoneIndex = 0; // zap0Ž1tlenie
+        if(currentZoneIndex >= timezones.length) currentZoneIndex = 0; // zapÂ0Å½1tlenie
 
         labelElem.textContent = timezones[currentZoneIndex].label;
         targetTime = setTargetForZone(currentZoneIndex);
