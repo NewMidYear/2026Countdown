@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Artykuł z obrazkiem — Święto Półrocza 2025</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Menu */
+        .menu-bar {
+            background-color: #111c2a;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .menu-bar a {
+            float: left;
+            display: block;
+            color: #f0f0f0;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .menu-bar a:hover {
+            background-color: #f39c12;
+            color: #111c2a;
+        }
+
+        .menu-bar a.icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .menu-bar a {
+                display: none;
+                width: 100%;
+                text-align: left;
+            }
+            .menu-bar a.icon {
+                float: right;
+                display: block;
+                cursor: pointer;
+            }
+            .menu-bar.responsive {
+                position: relative;
+            }
+            .menu-bar.responsive a {
+                display: block;
+                width: 100%;
+                border-top: 1px solid #f39c12;
+            }
+        }
+
+        /* Header */
+        header {
+            background-color: transparent;
+            padding: 40px 20px 20px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            color: #f39c12;
+            text-shadow: 0 0 8px #f39c12, 0 0 20px #f39c12;
+            letter-spacing: 2px;
+            animation: glow 2s ease-in-out infinite alternate;
+            display: inline-block;
+            position: relative;
+        }
+
+        header h1::after {
+            content: "✨";
+            position: absolute;
+            top: -10px;
+            right: -30px;
+            font-size: 2rem;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        header h2 {
+            margin-top: 10px;
+            font-weight: 400;
+            font-size: 1.6rem;
+            color: #f0d87d;
+            text-shadow: 0 0 5px #f0d87d;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #f39c12, 0 0 10px #f39c12;
+            }
+            to {
+                text-shadow: 0 0 20px #f39c12, 0 0 30px #f39c12;
+            }
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+            50% { opacity: 0.5; transform: scale(1.2) rotate(20deg); }
+        }
+
+        /* Main */
+        main {
+            padding: 20px 30px;
+            flex-grow: 1;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(243, 156, 18, 0.6);
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #f39c12;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: #f0f0f0;
+        }
+
+        /* Obrazek */
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 0 25px #f39c12;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .image-container img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px #f39c12;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #111c2a;
+            color: #f39c12;
+            font-weight: 600;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.6);
+        }
+
+        /* Fajerwerki w tle - CSS */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(243, 156, 18, 0.3) 10px, transparent 11px),
+                radial-gradient(circle at 80% 40%, rgba(243, 156, 18, 0.25) 8px, transparent 9px),
+                radial-gradient(circle at 50% 80%, rgba(243, 156, 18, 0.2) 12px, transparent 13px);
+            background-repeat: no-repeat;
+            animation: flicker 3s infinite alternate;
+            z-index: 0;
+        }
+
+        @keyframes flicker {
+            0% {opacity: 0.4;}
+            100% {opacity: 0.8;}
+        }
+    </style>
+</head>
+<body>
+
+<!-- Menu Hamburgerowe -->
+<div class="menu-bar" id="myMenu">
+    <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
+    <a href="index.html">Strona Główna</a>
+    <a href="odliczanie.html">Odliczanie</a>
+    <a href="wiadomosci.html">Najnowsze Wiadomości</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a href="mapa.html">Mapa</a>
+</div>
+
+<script>
+    function toggleMenu() {
+        var x = document.getElementById("myMenu");
+        if (x.className === "menu-bar") {
+            x.className += " responsive";
+        } else {
+            x.className = "menu-bar";
+        }
+    }
+</script>
+
+<header>
+    <h1>Święto Półrocza 2025 ✨</h1>
+    <h2>Artykuł z obrazkiem w temacie</h2>
+</header>
+
+<main>
+    <section>
+        <h2>Wprowadzenie</h2>
+        <p>Święto Półrocza to wyjątkowy moment w roku, kiedy celebrujemy osiągnięcia i patrzymy w przyszłość. Poniżej znajdziesz inspirujący obraz, który idealnie wpisuje się w klimat tego wydarzenia.</p>
+    </section>
+
+    <section class="image-container">
+        <!-- Podmień link w src na swój obraz z GitHuba -->
+        <a href="https://github.com/twoje-repozytorium/plik.png" target="_blank" rel="noopener noreferrer">
+            <img src="https://newmidyear.github.io/2025Countdown/mid_year_2025_image.png" alt="Święto Półrocza 2025" />
+        </a>
+    </section>
+
+    <section>
+        <h2>Znaczenie obrazu</h2>
+        <p>Obraz symbolizuje radość, energię i nowe początki. Dzięki jaskrawym kolorom i dynamicznej kompozycji przyciąga wzrok i motywuje do działania.</p>
+    </section>
+
+    <section>
+        <h2>Podsumowanie</h2>
+        <p>Mamy nadzieję, że ten artykuł oraz obraz dodadzą Ci pozytywnej energii i pomogą zrealizować plany na drugą połowę roku!</p>
+    </section>
+</main>
+
+<footer>
+    &copy; 2025 Święto Półrocza — Wszelkie prawa zastrzeżone
+</footer>
+
+</body>
+      </html>
